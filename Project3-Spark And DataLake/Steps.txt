@@ -1,0 +1,26 @@
+1. Copy data from three directories to S3 buckes like customer_landing, step_trainer_landing, and accelerometer_landing
+2. Create two glue tables customer_landing.sql and accelerometer_landing.sql - share the sql query
+3. Query data on above tables and take screen snap customer_landing.png and accelerometer_landing.png
+
+
+Glue Job
+1. customer_landing to customer_trusted -- Filter PII data
+2. accelerometer_landing to accelerometer_trusted -- Filter PII data
+3. Query your Glue customer_trusted table with Athena and take a screenshot of the data. Name the screenshot customer_trusted(.png,.jpeg, etc.).
+
+Glue Job 
+1. Create Glue Job and fetch customer data(trusted) which has accelerometer data(accelerometer_trusted) and agree to share data 
+2. 
+
+
+
+1. aws s3 cp and copy data to 3 s3 bucket -- customer_landing, step_trainer_landing, and accelerometer_landing
+2. Glue Job customer_landing -> filter(PII data) -> customer_trusted
+3. Glue Job customer_trusted + accelerometer_landing -> dropfields -> accelerometer_trusted
+4. Glue Job customer_trusted + accelerometer_trusted -> drop duplicates -> drop fields -> customer_curated
+5. Glue Job step_trainer_landing + customer_curated -> step_trainer_trusted
+6. Glue Job step_trainer_trusted + accelerometer_trusted -> same timestamp -> machine_learning_curated
+
+
+
+customer_landing.sql
